@@ -1,6 +1,7 @@
 "use client";
 
 import { signup } from "@/actions/signup/auth";
+import { Input } from "@/components/Input";
 import { useActionState } from "react";
 
 export default function SignupForm() {
@@ -10,19 +11,19 @@ export default function SignupForm() {
     <form action={action}>
       <div>
         <label htmlFor="name">Name</label>
-        <input id="name" name="name" placeholder="Name" />
+        <Input id="name" name="name" placeholder="Name" />
       </div>
       {state?.errors?.name && <p>{state.errors.name}</p>}
 
       <div>
         <label htmlFor="email">Email</label>
-        <input id="email" name="email" placeholder="Email" />
+        <Input id="email" name="email" placeholder="Email" />
       </div>
       {state?.errors?.email && <p>{state.errors.email}</p>}
 
       <div>
         <label htmlFor="password">Password</label>
-        <input id="password" name="password" type="password" />
+        <Input id="password" name="password" type="password" />
       </div>
       {state?.errors?.password && (
         <div>
