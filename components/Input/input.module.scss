@@ -1,17 +1,17 @@
 .authInput {
   outline: none !important;
-  @apply text-base bg-transparent w-full h-10 sm:h-12 rounded-full py-1 sm:py-3 px-2 text-black font-normal border border-ex_borderInput relative text-right;
+  @apply text-base bg-transparent text-white w-full h-10 sm:h-12 rounded-full py-1 sm:py-3 px-2  font-normal border border-ex_borderInput relative text-right;
 
   &::placeholder {
     @apply text-gray-400;
   }
 
   &:focus {
-    @apply border border-gray-500;
+    @apply bg-transparent border border-gray-500;
   }
 
   &:hover {
-    @apply border border-gray-500;
+    @apply bg-transparent border border-gray-500;
   }
 
   &.hasError {
