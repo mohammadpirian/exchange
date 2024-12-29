@@ -1,42 +1,38 @@
 "use client";
 
-import { signup } from "@/actions/signup/auth";
 import { Input } from "@/components/Input";
 import { useActionState } from "react";
+import { signup } from "./actions";
 
 export default function SignupForm() {
   const [state, action, pending] = useActionState(signup, undefined);
 
   return (
-    <form action={action}>
+    <form action={action} className="flex flex-col gap-4 w-96">
       <div>
-        <label htmlFor="name">Name</label>
-        <Input id="name" name="name" placeholder="Name" />
+        <Input
+          type="text"
+          variant="authInput"
+          name="email"
+          placeholder="ایمیل/موبایل"
+          componentName="email"
+          error={state?.errors?.email}
+        />
       </div>
-      {state?.errors?.name && <p>{state.errors.name}</p>}
 
       <div>
-        <label htmlFor="email">Email</label>
-        <Input id="email" name="email" placeholder="Email" />
+        <Input
+          id="password"
+          variant="authInput"
+          name="password"
+          type="password"
+          placeholder="رمز عبور"
+          componentName="email"
+          error={state?.errors?.password}
+        />
       </div>
-      {state?.errors?.email && <p>{state.errors.email}</p>}
-
-      <div>
-        <label htmlFor="password">Password</label>
-        <Input id="password" name="password" type="password" />
-      </div>
-      {state?.errors?.password && (
-        <div>
-          <p>Password must:</p>
-          <ul>
-            {state.errors.password.map((error) => (
-              <li key={error}>- {error}</li>
-            ))}
-          </ul>
-        </div>
-      )}
       <button disabled={pending} type="submit">
-        Sign Up
+        عضویت
       </button>
     </form>
   );
