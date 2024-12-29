@@ -1,5 +1,3 @@
-"use client";
-
 import SignupForm from "@/modules/signup/formSignUp";
 import Image from "next/image";
 
