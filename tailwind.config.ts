@@ -9,7 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-      
+      'ex_dark':'#03111D',
+      'ex_white':'#fafafa',
       },
     },
   },
