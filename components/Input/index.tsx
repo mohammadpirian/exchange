@@ -8,6 +8,7 @@ import styles from "./input.module.scss";
 interface InutProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   validation?: string;
+  error?: string[] | undefined;
   field?: any;
   form?: any;
   prefixIcon?: React.ReactNode;
@@ -25,6 +26,7 @@ export const Input: React.FC<InutProps> = ({
   variant = "",
   unit,
   componentName,
+  error,
   ...props
 }) => {
   const [show, setShow] = useState(false);
@@ -32,7 +34,7 @@ export const Input: React.FC<InutProps> = ({
   const handleToggle = () => {
     setShow(!show);
   };
-
+  console.log("error=", error);
   return (
     <>
       <div className="relative ">
@@ -42,9 +44,7 @@ export const Input: React.FC<InutProps> = ({
           type={type && show ? "text" : type}
           className={[
             styles[variant],
-            form?.touched[componentName] && form?.errors[componentName]
-              ? styles?.hasError
-              : "",
+            error?.length ? styles?.hasError : "",
           ].join(" ")}
         />
         {unit && (
@@ -52,11 +52,15 @@ export const Input: React.FC<InutProps> = ({
             <Typography variant="checkbox">متر</Typography>
           </div>
         )}
-        {form?.touched[componentName] && form?.errors[componentName] && (
-          <span className="flex mt-1.5 gap-1 text-po_red text-xs items-center font-normal">
-            {/* <Avatar src="/icon/info-circle.svg" /> */}
-            {form?.errors[componentName]}
-          </span>
+        {error?.length && (
+          <div>
+            <ul className="flex flex-col mt-1.5 gap-1 text-ex_error-100 text-xs font-normal">
+              {/* <Avatar src="/icon/info-circle.svg" /> */}
+              {error.map((error) => (
+                <li key={error}>- {error}</li>
+              ))}
+            </ul>
+          </div>
         )}
         {type === "password" && (
           <span className={styles.inputIcon}>
