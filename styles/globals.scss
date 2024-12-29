@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 body {
   @apply text-white bg-ex_dark-100;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(3, 17, 29, 1) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px white inset;
+  -webkit-text-fill-color: #fff;
+}
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
 }
