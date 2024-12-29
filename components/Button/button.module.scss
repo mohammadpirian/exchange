@@ -1,3 +1,11 @@
 .login {
-  @apply w-full flex justify-center items-center h-12 bg-ex_dark-100 rounded-full border border-b-4 hover:border-b-2 hover:bg-ex_tertiary-60 border-ex_white-hover text-white  font-semibold text-base;
+  @apply w-full flex justify-center items-center h-12 bg-ex_dark-100 rounded-full border border-b-4 border-ex_white-hover text-white  font-semibold text-base;
+
+  &:hover {
+    @apply border-b-2 bg-ex_tertiary-60;
+  }
+
+  &:disabled {
+    @apply border-b-2 bg-ex_tertiary-60 border-ex_borderInput text-ex_borderInput;
+  }
 }
