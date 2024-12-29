@@ -1,0 +1,52 @@
+// .authInput {
+//   outline: none !important;
+//   @apply text-base bg-po_primaryForms w-full h-10 sm:h-12 rounded-po_xs py-1 sm:py-3 px-2 text-po_primaryText font-normal border border-po_primaryForms relative text-right;
+
+//   &::placeholder {
+//     @apply text-po_placeHolder;
+//   }
+
+//   &:focus {
+//     @apply border border-po_primary;
+//   }
+
+//   &:hover {
+//     @apply border border-po_primary;
+//   }
+
+//   &.hasError {
+//     @apply border border-po_red border-opacity-10 bg-po_red bg-opacity-10;
+
+//     &::placeholder {
+//       @apply text-po_red;
+//     }
+//   }
+// }
+// .searchHeader {
+//   outline: none !important;
+//   @apply text-2xs lg:text-sm bg-po_primaryForms w-64 lg:w-po_129 h-6 lg:h-8 rounded-full py-3 px-2 text-po_primaryText font-normal border border-po_primaryForms relative text-center;
+
+//   &::placeholder {
+//     @apply text-po_placeHolder;
+//   }
+
+//   &:focus {
+//     @apply border border-po_primary;
+//   }
+
+//   &:hover {
+//     @apply border border-po_primary;
+//   }
+
+//   &.hasError {
+//     @apply border border-po_red border-opacity-10 bg-po_red bg-opacity-10;
+
+//     &::placeholder {
+//       @apply text-po_red;
+//     }
+//   }
+// }
+
+.inputIcon {
+  @apply absolute left-3 top-4 cursor-pointer;
+}
