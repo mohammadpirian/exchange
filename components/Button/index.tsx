@@ -1,31 +1,31 @@
-'use client'
-import React from 'react'
-import styles from './button.module.scss'
+"use client";
+import React from "react";
+import styles from "./button.module.scss";
 
 interface ButtonProps {
   variant?:
-    | 'login'
-    | 'signout'
-    | 'inventoryCard'
-    | 'DisabledLogin'
-    | 'HamburgerMenu'
-    | 'modal'
-    | 'expire'
-    | string
-  rounded?: boolean
-  prefix?: React.ReactNode
-  postfix?: React.ReactNode
-  onClick?: () => void
-  children: React.ReactNode
-  disabled?: boolean
-  className?: string
-  type?: any
-  loading?: boolean
+    | "login"
+    | "signout"
+    | "inventoryCard"
+    | "DisabledLogin"
+    | "HamburgerMenu"
+    | "modal"
+    | "expire"
+    | string;
+  rounded?: boolean;
+  prefix?: React.ReactNode;
+  postfix?: React.ReactNode;
+  onClick?: () => void;
+  children: React.ReactNode;
+  disabled?: boolean;
+  className?: string;
+  type?: any;
+  loading?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
-  variant = 'login',
+  variant = "login",
   onClick,
   prefix,
   postfix,
@@ -36,7 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       disabled={disabled}
-      className={disabled ? styles.disable : styles[variant]}
+      className={styles[variant]}
       onClick={onClick}
       {...props}
     >
@@ -50,5 +50,5 @@ export const Button: React.FC<ButtonProps> = ({
         </>
       )}
     </button>
-  )
-}
+  );
+};
