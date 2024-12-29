@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
       'ex_borderInput':'#66686D',
+      'ex_white-hover':'#E5E6E7',
       'ex_dark-100':'rgba(3, 17, 29, 1)',
       'ex_dark-90':'rgba(3, 17, 29, 0.9)',
       'ex_dark-80':'rgba(3, 17, 29, 0.8)',
